@@ -1,0 +1,124 @@
+@import './core';
+@import './variables';
+@import './mixins';
+@import './font';
+@import './general';
+@import './scroll_bar';
+
+footer{
+    position: relative !important;
+}
+
+body{
+    padding-bottom: 0 !important;
+}
+
+section{
+    height: auto !important;
+}
+
+.about-me{
+    &_big-container{
+        width: 100vw;
+        overflow:hidden;
+    }
+
+    // 'CONTENT'
+    &_content{
+        @include flex-variable(column, nowrap, flex-start, center, center);
+        margin-bottom: 2rem;
+
+        &_header{
+            width: 100vw;
+            @include flex-variable(row, wrap, space-between, center, center);
+            padding: 2rem;
+            height: 100vh;
+
+            @media screen and (max-width: 1100px) {
+                flex-direction: column;
+                justify-content: space-evenly;
+                padding: 0;
+                height: 95vh;
+            }
+
+            @media screen and (max-width: 850px) {
+                flex-direction: column;
+                justify-content: space-evenly;
+                padding: 0;
+                height: auto;
+                margin-top: 3rem;
+            }
+
+            & h2{
+                font-size: 320%;
+                text-align: center;
+                flex-grow: 1;
+
+                @media screen and (max-width: 1100px) {
+                    font-size: 280%;
+                    flex-grow: 0;
+                }
+
+                @media screen and (max-width: 430px) {
+                    font-size: 230%;
+                }
+            }
+
+            & img{
+                width: 60%;
+                order: -1;
+                border-radius: 63% 37% 80% 20% / 32% 57% 43% 68% ;
+                animation: moving-border 4s infinite alternate ease-in-out;
+
+                @media screen and (max-width: 850px) {
+                    width: 80%;
+                }
+
+                @media screen and (max-width: 430px) {
+                    width: 90%;
+                }
+            }
+        }
+
+        & p{
+            width: 98%;
+            padding: .3rem;
+            font-size: 115%;
+            @include main-font();
+            line-height: 1.7rem;;
+            color: rgba(255, 255, 255, 0.9);
+            // background-color: rgba(255, 255, 255, .1);
+            padding: 2rem 1rem;
+            border-radius: .5rem;
+            // margin-bottom: 2rem;
+            // border: 2px solid rgba(255, 255, 255, .1);
+            margin: 0.1rem;
+            padding: 3rem;
+
+            @media screen and (max-width: 1100px) {
+                padding: 2rem;
+                font-size: 110%;
+            }
+
+            @media screen and (max-width: 850px) {
+                padding: 1rem;
+            }
+
+            @media screen and (max-width: 430px) {
+                font-size: 100%;
+            }
+        }
+
+        & p::first-letter{
+            font-size: 125%;
+
+        }
+    }
+
+}
+
+@keyframes moving-border{
+    to{
+        border-radius: 18% 82% 9% 91% / 55% 29% 71% 45%  ;
+    }
+}
