@@ -1,5 +1,6 @@
 # Animated_Template
 A website template for visual artists.
+Live version [here](https://amiraliesi83.github.io/Animated_Template/)
 
 ## Credits
 
